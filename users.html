@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title id="changeTitle">Users</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="all,follow">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome CSS-->
+    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <!-- Fontastic Custom icon font-->
+    <link rel="stylesheet" href="css/fontastic.css">
+    <!-- Google fonts - Poppins -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
+    <!-- The DataTables software is hosted on the CDN (powered by CloudFlare)-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.18/af-2.3.2/b-1.5.4/fc-3.2.5/fh-3.1.4/kt-2.5.0/r-2.2.2/rg-1.1.0/rr-1.2.4/sc-1.5.0/sl-1.2.6/datatables.min.css"/>
+    <!-- DataTable CSS-->
+    <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css">
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--Sweet Alert 2-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.29.0/sweetalert2.min.css" integrity="sha256-iRCfyJKT4SVGA+So9OdVCCcIW0zuKBLXdg+diMQB5SY=" crossorigin="anonymous" />
+    <!-- Tweaks for older IEs--><!--[if lt IE 9]
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+		
+  </head>
+  <body>
+    <div class="page">
+      <!-- Main Navbar-->
+      <header class="header">
+        <nav class="navbar">
+          <div class="container-fluid">
+            <div class="navbar-holder d-flex align-items-center justify-content-between">
+              <!-- Navbar Header-->
+              <div class="navbar-header">
+                <!-- Navbar Brand --><a href="users.html" class="navbar-brand d-none d-sm-inline-block">
+                  <div class="brand-text d-none d-lg-inline-block"><span>chatApp</span></div>
+                  <div class="brand-text d-none d-sm-inline-block d-lg-none"><strong>CA</strong></div></a>
+                <!-- Toggle Button--><a id="toggle-btn" href="#" class="menu-btn active"><span></span><span></span><span></span></a>
+              </div>
+              <!-- Navbar Menu -->
+              <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
+                
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <div class="page-content d-flex align-items-stretch"> 
+        <!-- Side Navbar -->
+        <nav class="side-navbar">
+          <!-- Sidebar Header-->
+          <div class="sidebar-header d-flex align-items-center">
+            <div class="avatar"><img src="img/avatar-5.jpg" alt="..." class="img-fluid rounded-circle"></div>
+            <div class="title">
+              <h1 class="h4">Admin</h1>
+            </div>
+          </div>
+          <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
+          <ul class="list-unstyled">
+                    <li class="active"><a href="users.html"><span class="fas fa-user"></span>Users </a></li>
+                    <li><a href="events.html"> <span class="fas fa-calendar"></span>Events </a></li>
+                    <!-- <li><a href="gallery.html"> <span class="fas fa-file-image-o"></span>Gallery </a></li>
+                    <li><a href="about.html"><span class="fas fa-info-circle"></span>About Us </a></li>
+                    <li><a href="faq.html"><span class="fas fa-question"></span>FAQ </a></li>
+                    <li><a href="logout.html"><span class="fas fa-sign-out-alt"></span>Logout </a></li> -->
+          </ul>
+        </nav>
+        <div class="content-inner" id="datatable">
+          <!-- Page Header-->
+          <header class="page-header">
+            <div class="container-fluid">
+              <h2 class="no-margin-bottom">Users</h2>
+            </div>
+          </header>
+
+		  <section class="tables">
+        <div class="container-fluid">
+		    <table id="users" class="table table-bordered table-hover display responsive no-wrap" width="100%">
+          <thead>
+            <!--<th>Id</th>-->
+            <th>Name</th>
+            <th>Email</th>
+            <th>Type</th>
+            <th>DOB</th>
+            <th>ID</th>
+            <th>Verify</th>
+            <th>Online</th>
+            <th>Status</th>
+            <th>Ssid</th>
+            <th>Reviews</th>
+            <th>Profile Picture</th>
+            <th>Actions</th>
+          </thead>
+          <tbody id="ubody">
+            
+          </tbody>
+        </table>
+      </div> 
+      </section>  
+          
+          <!-- Page Footer-->
+          <footer class="main-footer">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-sm-6">
+                  <p>chatApp &copy; 2019</p>
+                </div>
+                <div class="col-sm-6 text-right">
+                  <p>Design by <a href="https://www.freelancer.com/u/shaheryartariq90" class="external">Shaheryar Tariq</a></p>
+                </div>
+              </div>
+            </div>
+          </footer>
+        </div>
+        
+        <div class="content-inner" id="details" style="display: none;">
+            <!-- Page Header-->
+            <header class="page-header">
+              <div class="container-fluid">
+                <h2 class="no-margin-bottom">Details</h2>
+              </div>
+            </header>
+    
+            <section class="charts">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-lg-3"></div>
+                  <div class="col-lg-6">
+                    <div class="Detail-card">
+                        <div class="Detail-card-header">
+                            <h3 class="title">User Details</h3>
+                        </div>
+                        <div class="text-center profile_image">
+                          
+                        </div>
+                        <div class="Detail-card-content"> 
+                            <h4 class="inner-title">Name</h4>
+                            <p id="uname" class="category"></p>
+                            <h4 class="inner-title">Email</h4>
+                            <p id="uemail" class="category"></p>
+                            <h4 class="inner-title">Account Type</h4>
+                            <p id="utype" class="category"></p>
+                            <h4 class="inner-title">DOB</h4>
+                            <p id="dob" class="category"></p>
+                            <h4 class="inner-title">Is Verify?</h4>
+                            <p id="verify" class="category"></p>
+                            <h4 class="inner-title">Online</h4>
+                            <p id="online" class="category"></p>
+                            <h4 class="inner-title">SSID</h4>
+                            <p id="ssid" class="category"></p>
+                            <h4 class="inner-title">Status</h4>
+                            <p id="status" class="category"></p><br />
+                           <!--<h2 class="text-center">Reviews</h2>-->
+                            <div class="review">
+                              
+                            </div>
+                            <!--<h4 class="inner-title">Referrals</h4>
+                            <p id="referral" class="category">User Referrals</p>-->
+                        </div>
+                        <div class="col-lg-3"></div>
+                    </div>
+                  </div>
+    
+                  <!--<div class="col-lg-6">
+                      <div class="Detail-card">
+                          <div class="Detail-card-header">
+                              <h3 class="title">User Order Details</h3>
+                          </div>
+                          <div class="Detail-card-content">
+                             
+                          </div>
+                      </div>
+                  </div>-->
+                  <div class="col-lg-12">
+                      <button type="button" style="margin-bottom: 3em; background: #ec0b43;border-color: #ec0b43;" class="btn btn-primary backBtn"><i class="fas fa-arrow-left"></i> Back</button>
+                    </div>
+                  </div>
+                </div>
+            </section>
+
+            <!-- Page Footer-->
+            <footer class="main-footer">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <p>chatApp &copy; 2019</p>
+                  </div>
+                  <div class="col-sm-6 text-right">
+                    <p>Design by <a href="https://www.freelancer.com/u/shaheryartariq90" class="external">Shaheryar Tariq</a></p>
+                  </div>
+                </div>
+              </div>
+            </footer>
+
+          </div>
+
+      </div>
+    </div>
+    <!-- JavaScript files-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/popper.js/umd/popper.min.js"> </script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
+    <script src="vendor/jquery-validation/jquery.validate.min.js"></script>
+    <!--DataTable-->
+    <script type="text/javascript" src="DataTables/datatables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+    <!--DataTable CDN-->
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/af-2.3.2/b-1.5.4/fc-3.2.5/fh-3.1.4/kt-2.5.0/r-2.2.2/rg-1.1.0/rr-1.2.4/sc-1.5.0/sl-1.2.6/datatables.min.js"></script>
+    <!--Sweet Alert 2-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.29.0/sweetalert2.all.js" integrity="sha256-q0VbkGlQnd6FCDsjIOw97vt7NTVducJjCuXp5LbJ3Cc=" crossorigin="anonymous"></script>
+    <!--Firebase-->   
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+    <script>
+  // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyA-BOrZWWFY6xF9YPS47TJzwvW9Ohr19dI",
+      authDomain: "chatapp-1eda1.firebaseapp.com",
+      databaseURL: "https://chatapp-1eda1.firebaseio.com",
+      projectId: "chatapp-1eda1",
+      storageBucket: "chatapp-1eda1.appspot.com",
+      messagingSenderId: "769108814826"
+    };
+    firebase.initializeApp(config);
+    </script>
+
+    <!-- Main File-->
+    <script src="js/user.js"></script>
+  </body>
+</html>
